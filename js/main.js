@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $("button").on("click",function(){
-        $("#carouselExampleFade").hide();
+        $("#carouselExampleFade").fadeToggle(1000);
     });
 
 });
