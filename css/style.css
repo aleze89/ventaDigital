@@ -4,3 +4,7 @@ body{
 #carouselExampleFade img[src$=".jpg"] {
     height: 30rem;
 }
+
+.black {
+    background-color: black;
+}
