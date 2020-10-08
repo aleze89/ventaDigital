@@ -10,20 +10,36 @@ $(document).ready(function(){
         
     
 
-var $botones = $('#color');
+var colorBody = $('#color');
 
-$botones.click(evento => {
+colorBody.click(evento => {
+    var $elemento = $(evento.target);
+    
+    if ($elemento.hasClass('black')) {
+        $elemento.removeClass('black');
+        $( "body" ).css('background', 'linear-gradient(rgba(238, 156, 167,0.3),rgba(255, 179, 187,0.3),rgba(255, 221, 225,0.3))');
+        
+    }
+    else {
+        $elemento.addClass('black');
+         $( "body").css( "background-color", "black" );
+  }
+});
+
+
+var agregarHtml = $('#agregar');
+var clone = $('div #central').clone();
+agregarHtml.click(evento => {
   var $elemento = $(evento.target);
    
-  if ($elemento.hasClass('black')) {
-    $elemento.removeClass('black');
-    $( "body" ).css('background', 'linear-gradient(rgba(238, 156, 167,0.3),rgba(255, 179, 187,0.3),rgba(255, 221, 225,0.3))');
-    //$( "body" ).css( "background-color", "black" );
+  if ($elemento.hasClass('central')) {
+      $elemento.removeClass('central');
+      $( "div #central" ).append('clone');
+   
   }
   else {
-    $elemento.addClass('black');
-    //$( "body" ).css('background', 'linear-gradient(rgba(238, 156, 167,0.3),rgba(255, 179, 187,0.3),rgba(255, 221, 225,0.3))'); 
-    $( "body" ).css( "background-color", "black" );
+    $elemento.addClass('central');
+    $( "div #central" ).remove('#central');
   }
 });
 
@@ -43,24 +59,7 @@ $botones.click(evento => {
 
 
 
-    /*
-    //función que se ejecutará al presionar el botón #color
-    $("#color").on("click",function(){
-        
-        //cambio color del body
-         $( "body" ).css( "background-color", "black" );
-        
-        //cambiamos texto según lo que corresponde
-        /*var colorActual = $(this).filter($());
-        if(colorActual == true){
-            $( "body" ).css( "background-color", "red" );
-        }  else{
-            $( "body" ).css("background: linear-gradient(rgba(238, 156, 167,0.3),rgba(255, 179, 187,0.3),rgba(255, 221, 225,0.3))"); 
-        }               
-
-        
-    });*/
-
+  
 
         
 

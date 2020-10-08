@@ -5,6 +5,6 @@ body{
     height: 30rem;
 }
 
-.black {
+body .black {
     background-color: black;
 }
